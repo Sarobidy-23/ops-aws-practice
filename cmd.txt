@@ -1,0 +1,1 @@
+aws cloudformation create-stack --stack-name ${{ cf-stack-name }} --template-body ${{ cf-template-file }}
