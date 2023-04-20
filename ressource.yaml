@@ -3,4 +3,16 @@ Resources:
   Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: STD21011
+      BucketName: std21011
+  SsmArn:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: BucketArn
+      Type: String
+      Value: !GetAtt Bucket.Arn
+  SsmName:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: BucketName
+      Type: String
+      Value: !Ref Bucket.name
