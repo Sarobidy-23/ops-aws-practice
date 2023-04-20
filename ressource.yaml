@@ -4,15 +4,10 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: std21011
-  SsmArn:
+  SsmArnName:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: BucketArn
+      Name: !Join ["", [test, -s3, -bucket]]
       Type: String
       Value: !GetAtt Bucket.Arn
-  SsmName:
-    Type: AWS::SSM::Parameter
-    Properties:
-      Name: BucketName
-      Type: String
-      Value: !Ref BucketName
+  
