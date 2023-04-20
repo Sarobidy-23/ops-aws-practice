@@ -15,4 +15,4 @@ Resources:
     Properties:
       Name: BucketName
       Type: String
-      Value: !Ref Bucket.Name
+      Value: !Ref BucketName
